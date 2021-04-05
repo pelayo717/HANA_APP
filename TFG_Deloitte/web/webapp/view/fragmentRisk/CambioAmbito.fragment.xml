@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   id="fragment-2">
+   <Dialog
+      title="Selección del ámbito del riesgo"
+      contentHeight="10%"
+      contentWidth="15%">
+		<content >
+		<ActionSelect
+			id="ContenedorAmbito"
+			class="sapUiResponsiveMargin">
+			<items>
+				<core:Item id="Externo" key="Externo" text="Externo"/>
+				<core:Item id="Interno" key="Interno" text="Interno"/>
+				<core:Item id="Ambos" key="Ambos" text="Ambos"/>
+			</items>
+		</ActionSelect>
+		</content>
+   		<beginButton>
+		<Button
+			text="Guardar"
+			type="Accept"
+			press=".salvarDialogoAmbito"/>
+		</beginButton>
+		<endButton>
+					<Button
+			text="Cancelar"
+			type="Reject"
+			press=".cerrarDialogoAmbito"/>
+		</endButton>
+   </Dialog>
+</core:FragmentDefinition>

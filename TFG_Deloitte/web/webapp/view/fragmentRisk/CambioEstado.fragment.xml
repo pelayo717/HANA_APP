@@ -1,0 +1,34 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   id="fragment-2">
+   <Dialog
+      title="Selección del estado del riesgo"
+      contentHeight="10%"
+      contentWidth="15%">
+		<content >
+		<ActionSelect
+			id="ContenedorEstado"
+			class="sapUiResponsiveMargin">
+			<items>
+				<core:Item id="Notratado" key="Notratado" text="No tratado"/>
+				<core:Item id="Monitorizando" key="Monitorizando" text="Monitorizando"/>
+				<core:Item id="Tratando" key="Tratando" text="Tratando"/>
+				<core:Item id="Cerrado" key="Cerrado" text="Cerrado"/>
+			</items>
+		</ActionSelect>
+		</content>
+   		<beginButton>
+		<Button
+			text="Guardar"
+			type="Accept"
+			press=".salvarDialogoEstado"/>
+		</beginButton>
+		<endButton>
+					<Button
+			text="Cancelar"
+			type="Reject"
+			press=".cerrarDialogoEstado"/>
+		</endButton>
+   </Dialog>
+</core:FragmentDefinition>

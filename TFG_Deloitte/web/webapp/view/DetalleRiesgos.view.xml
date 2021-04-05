@@ -1,0 +1,206 @@
+<mvc:View xmlns="sap.uxap" xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" controllerName="web.webapp.controller.DetalleRiesgos">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+		
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{jsonmodel2>/DLSet/data/TITULO}" wrapping="true" class="sapUiSmallMarginEnd sapUiTinyMarginTop"/>
+				</expandedHeading>
+				<actions>
+					<m:ToggleButton id="botonEvaluacion" text="Evaluar" type="Emphasized" press=".evaluarReisgo"/>
+					<m:ToggleButton id="botonEliminacion" text="Eliminar" type="Reject" press =".eliminarRiesgo"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<sections>
+			<ObjectPageSection title="Información General">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1">
+								<form:content>
+								<m:VBox>
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Identificador del riesgo"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/ID_RIESGO}"/>
+									</m:HBox>
+									</m:VBox>
+
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Responsable"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/RESPONSABLE}"/>
+									</m:HBox>
+									</m:VBox>
+
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Descripcion"/>
+									<m:Button id="botonCambioDescripcion" type="Transparent" text="" press=".cambioDescripcion" icon="sap-icon://edit"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/DESCRIPCION}"/>
+									</m:HBox>
+									</m:VBox>
+
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Ambito"/>
+									<m:Button id="botonCambioAmbito" type="Transparent" text="" press=".cambioAmbito" icon="sap-icon://edit"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/AMBITO}"/>
+									</m:HBox>
+									</m:VBox>
+									
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Posibles Causas"/>
+									<m:Button id="botonCambioCausas" type="Transparent" text="" press=".cambioCausas" icon="sap-icon://edit"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/POSIBLES_CAUSAS}"/>
+									</m:HBox>
+									</m:VBox>
+
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Posibles Fuentes"/>
+									<m:Button id="botonCambioFuentes" type="Transparent" text="" press=".cambioFuentes" icon="sap-icon://edit"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/POSIBLES_FUENTES}"/>
+									</m:HBox>
+									</m:VBox>
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Fecha Inicio"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/FECHA_INICIO}"/>
+									</m:HBox>
+									</m:VBox>
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Fecha Fin"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/FECHA_FIN}"/>
+									</m:HBox>
+									</m:VBox>
+
+
+									<m:VBox class="sapUiSmallMarginBottom">
+									<m:HBox alignItems="Center">
+									<m:Label text="Estado"/>
+									<m:Button id="botonCambioEstado" type="Transparent" text="" press=".cambioEstado" icon="sap-icon://edit"/>
+									</m:HBox>
+									<m:HBox alignItems="Center">
+									<m:Text text="{jsonmodel2>/DLSet/data/ESTADO}"/>
+									</m:HBox>
+									</m:VBox>
+								</m:VBox>
+
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Evaluaciones">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table id="suppliersTable" items="{path : 'jsonmodel3>/DLSet/data/results'}">
+								<m:columns>
+									<m:Column>
+										<m:Text text="Evaluación"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Cuestionario"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Fecha"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Prob. Final"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Imp. Final"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Nivel Asociado"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Navigation">
+										<m:cells>
+											<m:ObjectIdentifier text="{jsonmodel3>NUM_EVALUACION}"/>
+											<m:ObjectIdentifier text="{jsonmodel3>ID_CUESTIONARIO}"/>
+											<m:ObjectIdentifier text="{jsonmodel3>FECHA_EVALUACION}"/>
+											<m:ObjectIdentifier text="{jsonmodel3>PROBABILIDAD_FINAL}"/>
+											<m:ObjectIdentifier text="{jsonmodel3>IMPACTO_FINAL}"/>
+											<m:ObjectIdentifier text="{jsonmodel3>NIVEL_RIESGO_APLICADO}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			
+			<ObjectPageSection title="Tipos de Riesgo e Impacto">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table id="suppliersTable3" items="{path : 'jsonmodel5>/DLSet/data/results'}">
+								<m:columns>
+									<m:Column>
+										<m:Text text="Tipo de Riesgo"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Navigation">
+										<m:cells>
+											<m:ObjectIdentifier text="{jsonmodel5>TIPO_RIESGO}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+							
+							<m:Table id="suppliersTable2" items="{path : 'jsonmodel4>/DLSet/data/results'}">
+								<m:columns>
+									<m:Column>
+										<m:Text text="Tipo de Impacto"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Navigation">
+										<m:cells>
+											<m:ObjectIdentifier text="{jsonmodel4>TIPO_IMPACTO}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>

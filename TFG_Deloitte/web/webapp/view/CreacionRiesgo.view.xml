@@ -1,0 +1,87 @@
+<mvc:View xmlns="sap.m" xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc" controllerName="web.webapp.controller.CreacionRiesgo">
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title class="sapUiTinyMarginTop" text="{i18n>tituloRiesgoCreacion}"/>
+				</f:heading>
+				<f:actions>
+						<Button  text="Crear Riesgo" type="Accept" press=".onCrearRiesgo"/>
+						<Button text="Cancelar Riesgo" type="Reject" press=".onNavegacionPrincipal"/>
+					</f:actions>
+			</f:DynamicPageTitle>
+		</f:title>
+	
+		<f:content>
+			<VBox fitContainer="true">
+					<items>
+						<HBox class="sapUiTinyMarginBottom">
+							<Label text="Titulo" labelFor="ContenedorTitulo" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(El titulo no se podrá modificar más adelante. El tamaño máximo sera de 20 caracteres)"/>
+						</HBox>
+						<Input id="ContenedorTitulo" placeholder="Introduzca el titulo del riesgo" maxLength="20" width="20%"/>
+                		
+                		<HBox class="sapUiTinyMarginBottom sapUiSmallMarginTop">
+							<Label text="Responsable" labelFor="ContenedorResponsable" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(El responsable no se podrá modificar más adelante. El tamaño máximo sera de 20 caracteres)"/>
+						</HBox>
+						<Input id="ContenedorResponsable" placeholder="Introduzca el responsable del riesgo" maxLength="20" width="20%"/>
+    
+                    	<HBox class="sapUiTinyMarginBottom sapUiSmallMarginTop">
+							<Label text="Tipo/s de riesgo" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(Se pueden seleccionar tantos tipos de riesgo como el usuario desee. Los tipos de riesgo no se podran modificar más adelante)"/>
+						</HBox>
+						<HBox>
+							<CheckBox text="Gobernanza" id="Gobernanza"/>
+							<CheckBox text="Estratégico" id="Estrategico"/>
+							<CheckBox text="Operacional" id="Operacional"/>
+							<CheckBox text="Comptetitivo" id="Competitivo"/>
+							<CheckBox text="Financiero" id="Financiero"/>
+							<CheckBox text="Reputacional" id="Reputacional"/>
+							<CheckBox text="Legal" id="Legal"/>
+							<CheckBox text="Tecnológico" id="Tecnologico"/>
+						</HBox>
+						
+						<HBox class="sapUiTinyMarginBottom sapUiSmallMarginTop">
+							<Label text="Ámbito del riesgo" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(Puede seleccionar ámbitos)"/>
+						</HBox>
+						<HBox>
+							<CheckBox text="Externo" id="Externo"/>
+							<CheckBox text="Interno" id="Interno"/>
+						</HBox>
+						
+						<HBox class="sapUiTinyMarginBottom sapUiSmallMarginTop">
+							<Label text="Posibles causas del riesgo" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(Incluya las posibles causas del riesgo en caso de conocerse)"/>
+						</HBox>
+						<TextArea id="CreacionContenedorCausas" maxLength="250" placeholder="Máximo de 250 caracteres" growing="true" growingMaxLines="7" width="80%" height="70%"/>
+						
+						<HBox class="sapUiTinyMarginBottom sapUiSmallMarginTop">
+							<Label text="Posibles fuentes del riesgo" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(Incluya las posibles fuentes del riesgo en caso de conocerse)"/>
+						</HBox>
+						<TextArea id="CreacionContenedorFuentes" maxLength="250" placeholder="Máximo de 250 caracteres" growing="true" growingMaxLines="7" width="80%" height="70%"/>
+
+						<HBox class="sapUiTinyMarginBottom sapUiSmallMarginTop">
+							<Label text="Posibles impactos del riesgo" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(Se pueden seleccionar tantos impactos como el usuario desee. Los impactos no se podran modificar más adelante)"/>
+						</HBox>
+						<HBox>
+							<CheckBox text="Financiero" id="FinancieroImpacto"/>
+							<CheckBox text="Reputacional" id="ReputacionalImpacto"/>
+							<CheckBox text="Operacional" id="OperacionalImpacto"/>
+							<CheckBox text="Tecnológico" id="TecnologicoImpacto"/>
+						</HBox>
+						
+						<HBox class="sapUiTinyMarginBottom sapUiSmallMarginTop">
+							<Label text="Descripción/Contexto" design="Bold"/>
+							<Text class="sapUiTinyMarginBegin" text="(Puede incluir una descripción sobre el riesgo, o el contexto donde se desarrolla)"/>
+						</HBox>
+						<TextArea id="CreacionContenedorDescripcion" maxLength="200" placeholder="Máximo de 200 caracteres" growing="true" growingMaxLines="7" width="80%" height="70%"/>
+                </items>
+			</VBox>
+		</f:content>
+
+	</f:DynamicPage>
+</mvc:View>

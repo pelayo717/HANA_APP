@@ -1,0 +1,65 @@
+<mvc:View 
+xmlns="sap.m" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:layout="sap.ui.layout"
+xmlns:microchart="sap.suite.ui.microchart"
+xmlns:viz="sap.viz.ui5.controls" 
+controllerName="web.webapp.controller.Home">
+<Page title="{i18n>tituloPrincipal}" id="idVistaPrincipal">
+	        <layout:VerticalLayout class="sapUiResponsiveMargin">
+	            <Title titleStyle="H2" text="{i18n>tituloContenedorPrimero}" class="sapUiTinyMarginBegin"/>
+	            <layout:HorizontalLayout allowWrapping="true">
+					<viz:VizFrame xmlns="sap.viz" class="sapUiMediumMarginTop" id="matrizRiesgos" width="30em" height="25em">
+					</viz:VizFrame>
+	            </layout:HorizontalLayout>
+	        </layout:VerticalLayout>
+	    	<layout:VerticalLayout class="sapUiResponsiveMargin">
+	            <Title titleStyle="H2" text="{i18n>tituloContenedorPrimeroAuxiliar}" class="sapUiTinyMarginBegin"/>
+	            <layout:HorizontalLayout allowWrapping="true">
+					<viz:VizFrame xmlns="sap.viz" class="sapUiMediumMarginTop" id="graficoRiesgos" width="30em" height="25em">
+					</viz:VizFrame>
+	            </layout:HorizontalLayout>
+	        </layout:VerticalLayout>
+	        <layout:VerticalLayout class="sapUiResponsiveMargin">
+	           <Title titleStyle="H2" text="{i18n>tituloContenedorSegundo}" class="sapUiTinyMarginBegin"/>
+	        <layout:content>
+	            <layout:HorizontalLayout allowWrapping="true">
+	                <GenericTile xmlns="sap.m" class="sapUiMediumMarginBegin sapUiMediumMarginTop sapUiMediumMarginBottom" press=".onNavegacionRiesgos" header="{i18n>tituloSeccionRiesgos}">
+	                	<tileContent>
+	                        <TileContent>
+	                            <content>
+	                                <NumericContent value="{cantidadRiesgos>/numero}" scale="Riesgos" class="sapUiMediumMarginRight" press=".onNavegacionRiesgos" truncateValueTo="4"/>
+	                            </content>
+	                        </TileContent>
+                    	</tileContent>
+	                </GenericTile>
+	            	<GenericTile xmlns="sap.m" class="sapUiMediumMarginBegin sapUiMediumMarginTop sapUiMediumMarginBottom" press=".onNavegacionCuestionarios" header="{i18n>tituloSeccionCuestionarios}">
+	            		<tileContent>
+	                        <TileContent>
+	                            <content>
+	                                <NumericContent value="{cantidadCuestionarios>/numero}" scale="Cuestionarios" class="sapUiMediumMarginRight" press=".onNavegacionCuestionarios" truncateValueTo="4"/>
+	                            </content>
+	                        </TileContent>
+                    	</tileContent>
+	                </GenericTile>
+	                <SlideTile xmlns="sap.m" class="sapUiMediumMarginBegin sapUiMediumMarginTop sapUiMediumMarginBottom">
+	                    <GenericTile
+	                    header="{i18n>tituloSeccionPendientes}" 
+	                    frameType="TwoByOne">
+	                    <tileContent>
+	                        <TileContent>
+	                            <content>
+	                            	<NewsContent
+                                        contentText="Quedan {cantidadCuestionarios>/numero} evaluaciones pendientes por finalizar">
+                                    </NewsContent>
+	                            </content>
+	                        </TileContent>
+                    	</tileContent>
+	                    </GenericTile>
+                	</SlideTile>
+	            </layout:HorizontalLayout>
+	        </layout:content>
+	        </layout:VerticalLayout>
+	    <content/>
+	    </Page>
+</mvc:View>

@@ -1,0 +1,65 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Quickstart Tutorial</title>
+	<script 
+		id="sap-ui-bootstrap"
+		src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-libs="sap.m,sap.viz,sap.f,sap.ui.core"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-async="true"
+		data-sap-ui-resourceroots='{
+			"web.webapp": "./",
+			"web.webapp.controller": "./controller/",
+			"web.webapp.view": "./view/",
+			"web.webapp.css": "./css/",
+			"web.webapp.i18n": "./i18n/",
+			"web.webapp.model": "./model/"
+		}'
+		data-sap-ui-onInit="module:web/webapp/controller/index">
+	</script>
+</head>
+<body class="sapUiBody" id="content"></body>
+</html>
+
+<!--REUTILIZAR
+
+<!--<script>
+     sap.ui.getCore().attachInit(function () {
+        new sap.ui.core.ComponentContainer({
+           name : "web.webapp"
+        }).placeAt("content");
+     });
+</script>-->
+
+
+<!--<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<title>web</title>
+<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+	id="sap-ui-bootstrap" data-sap-ui-libs="sap.m, sap.ui.table"
+	data-sap-ui-theme="sap_bluecrystal">
+		</script>
+<!--<script>
+	var oModel = new sap.ui.model.odata.v2.ODataModel("/xsodata/riesgo.xsodata", {annotationURI:"/xsodata/riesgo.xsodata/ListaRiesgos"});
+	var oTable = new sap.ui.table.Table({ title: "My first table" });
+	oTable.addColumn(new sap.ui.table.Column({ label: "ID_RIESGO", template: "ID_RIESGO" }));
+	oTable.addColumn(new sap.ui.table.Column({ label: "RESPONSABLE", template: "RESPONSABLE" }));
+	oTable.addColumn(new sap.ui.table.Column({ label: "TITULO", template: "TITULO" }));
+	oTable.addColumn(new sap.ui.table.Column({ label: "FECHA_INICIO", template: "FECHA_INICIO" }));
+	oTable.addColumn(new sap.ui.table.Column({ label: "FECHA_FIN", template: "FECHA_FIN" }));
+	oTable.addColumn(new sap.ui.table.Column({ label: "ESTADO", template: "ESTADO" }));
+	oTable.addColumn(new sap.ui.table.Column({ label: "DESCRIPCION", template: "DESCRIPCION" }));
+	oTable.setModel(oModel);
+	oTable.bindRows("/ListaRiesgos")
+	oTable.placeAt("uiArea");
+	</script>
+</head>
+<body class="sapUiBody">
+	<div id="uiArea"></div>
+</body>
+</html>-->

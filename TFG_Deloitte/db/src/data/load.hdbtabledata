@@ -1,0 +1,297 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "RIESGO",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "riesgo.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_RIESGO",
+			"RESPONSABLE",
+			"TITULO",
+			"DESCRIPCION",
+			"AMBITO",
+			"POSIBLES_CAUSAS",
+			"POSIBLES_FUENTES",
+			"FECHA_INICIO",
+			"FECHA_FIN",
+			"ESTADO"]
+		},
+		"column_mappings": {
+			"ID_RIESGO":1,
+			"RESPONSABLE":2,
+			"TITULO":3,
+			"DESCRIPCION":4,
+			"AMBITO":5,
+			"POSIBLES_CAUSAS":6,
+			"POSIBLES_FUENTES":7,
+			"FECHA_INICIO":8,
+			"FECHA_FIN":9,
+			"ESTADO":10
+		}
+	},{
+		"target_table": "TIPOS_RIESGO",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "tipos_riesgo.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_RIESGO",
+			"TIPO_RIESGO"]
+		},
+		"column_mappings": {
+			"ID_RIESGO":1,
+			"TIPO_RIESGO":2
+		}
+	},
+	{
+		"target_table": "TIPOS_IMPACTO",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "tipos_impacto.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_RIESGO",
+			"TIPO_IMPACTO"]
+		},
+		"column_mappings": {
+			"ID_RIESGO":1,
+			"TIPO_IMPACTO":2
+		}
+	},{
+		"target_table": "PREGUNTA",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "pregunta.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_PREGUNTA",
+			"TIPO",
+			"DESCRIPCION"]
+		},
+		"column_mappings": {
+			"ID_PREGUNTA":1,
+			"TIPO":2,
+			"DESCRIPCION":3
+		}
+	},{
+		"target_table": "RESPUESTA",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "respuesta.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_PREGUNTA",
+			"NUM_RESPUESTA",
+			"NOMBRE_RESPUESTA",
+			"VALOR_RESPUESTA"]
+		},
+		"column_mappings": {
+			"ID_PREGUNTA":1,
+			"NUM_RESPUESTA":2,
+			"NOMBRE_RESPUESTA":3,
+			"VALOR_RESPUESTA":4
+		}
+	},{
+		"target_table": "CUESTIONARIO",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "cuestionario.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_CUESTIONARIO",
+			"RESPONSABLE",
+			"TITULO",
+			"DESCRIPCION",
+			"TIEMPO",
+			"FECHA_INICIO",
+			"FECHA_FIN"]
+		},
+		"column_mappings": {
+			"ID_CUESTIONARIO":1,
+			"RESPONSABLE":2,
+			"TITULO":3,
+			"DESCRIPCION":4,
+			"TIEMPO":5,
+			"FECHA_INICIO":6,
+			"FECHA_FIN":7
+		}
+	},{
+		"target_table": "COMENTARIO",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "comentario.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_CUESTIONARIO",
+			"NUM_COMENTARIO",
+			"FECHA_COMENTARIO",
+			"DESCRIPCION"]
+		},
+		"column_mappings": {
+			"ID_CUESTIONARIO":1,
+			"NUM_COMENTARIO":2,
+			"FECHA_COMENTARIO":3,
+			"DESCRIPCION":4
+		}
+	},{
+		"target_table": "CALCULOS",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "calculos.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_CUESTIONARIO",
+			"PROBABILIDAD",
+			"FINANCIERO",
+			"REPUTACIONAL",
+			"OPERACIONAL",
+			"TECNOLOGICO"]
+		},
+		"column_mappings": {
+			"ID_CUESTIONARIO":1,
+			"PROBABILIDAD":2,
+			"FINANCIERO":3,
+			"REPUTACIONAL":4,
+			"OPERACIONAL":5,
+			"TECNOLOGICO":6
+		}
+	},{
+		"target_table": "PREGUNTA_CUESTIONARIO",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "pregunta_cuestionario.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"ID_CUESTIONARIO",
+			"ID_PREGUNTA"
+			]
+		},
+		"column_mappings": {
+			"ID_CUESTIONARIO":1,
+			"ID_PREGUNTA":2
+		}
+	},{
+		"target_table": "EVALUACION",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "evaluacion.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"NUM_EVALUACION",
+			"ID_RIESGO",
+			"ID_CUESTIONARIO",
+			"FECHA_EVALUACION",
+			"PROBABILIDAD_FINAL",
+			"IMPACTO_FINAL",
+			"NIVEL_RIESGO_APLICADO"
+			]
+		},
+		"column_mappings": {
+			"NUM_EVALUACION":1,
+			"ID_RIESGO":2,
+			"ID_CUESTIONARIO":3,
+			"FECHA_EVALUACION":4,
+			"PROBABILIDAD_FINAL":5,
+			"IMPACTO_FINAL":6,
+			"NIVEL_RIESGO_APLICADO":7
+		}
+	},{
+		"target_table": "EVALUACION_RESPUESTA",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "evaluacion_respuesta.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+         	"include_filter" : [ ],		
+			"import_columns": [
+			"NUM_EVALUACION",
+			"ID_PREGUNTA",
+			"NUM_RESPUESTA"
+			]
+		},
+		"column_mappings": {
+			"NUM_EVALUACION":1,
+			"ID_PREGUNTA":2,
+			"NUM_RESPUESTA":3
+		}
+	}
+	
+	]
+}

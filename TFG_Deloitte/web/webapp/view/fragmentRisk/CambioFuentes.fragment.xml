@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   id="fragment-2">
+   <Dialog
+      title="Cambio de Posibles Fuentes"
+      contentHeight="30%"
+      contentWidth="45%">
+		<content >
+			<Label class="sapUiResponsiveMargin" text="Introduzca las posibles fuentes del riesgo"/>
+			<TextArea class="sapUiResponsiveMargin" id="ContenedorFuentes" maxLength="250" placeholder="Máximo de 250 caracteres" growing="true" growingMaxLines="7" width="80%" height="60%"/>
+		</content>
+   		<beginButton>
+		<Button
+			text="Guardar"
+			type="Accept"
+			press=".salvarDialogoFuentes"/>
+		</beginButton>
+		<endButton>
+					<Button
+			text="Cancelar"
+			type="Reject"
+			press=".cerrarDialogoFuentes"/>
+		</endButton>
+   </Dialog>
+</core:FragmentDefinition>

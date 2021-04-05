@@ -1,0 +1,53 @@
+ID: TFG_Deloitte
+_schema-version: '2.1'
+description: 'Trabajo de Fin de Grado, Evaluación de Riesgos Laborales'
+version: 0.0.1
+modules:
+  - name: db
+    type: hdb
+    path: db
+    requires:
+      - name: hdi_db
+  - name: web
+    type: html5
+    path: web
+    parameters:
+      disk-quota: 512M
+      memory: 256M
+    build-parameters:
+      builder: grunt
+    requires:
+      - name: uaa_TFG_Deloitte
+      - name: dest_TFG_Deloitte
+      - name: core_xsjs_api
+        group: destinations
+        properties:
+          name: core-xsjs-backend
+          url: '~{url}'
+          forwardAuthToken: true
+  - name: core_xsjs
+    type: nodejs
+    path: core_xsjs
+    provides:
+      - name: core_xsjs_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_db
+      - name: db
+resources:
+  - name: hdi_db
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: uaa_TFG_Deloitte
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: dest_TFG_Deloitte
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service

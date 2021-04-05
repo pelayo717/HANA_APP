@@ -1,0 +1,83 @@
+<mvc:View 
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="web.webapp.controller.Riesgos">
+	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title class="sapUiTinyMarginTop" text="{i18n>tituloRiesgos}"/>
+				</f:heading>
+				<f:actions>
+						<Button
+								text="Página Principal"
+								type="Emphasized"
+								press=".onNavegacionPrincipal"/>
+					</f:actions>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<VBox fitContainer="true">
+				<OverflowToolbar class="sapFDynamicPageAlignContent ">
+					<ToolbarSpacer/>
+					<SearchField search=".onSearch" placeholder="Búsqueda por Título" width="17.5rem"/>
+					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent" press=".onAdd"/>
+					<OverflowToolbarButton icon="sap-icon://sort" text="Sort" type="Transparent" press=".onSort"/>
+				</OverflowToolbar>
+				<Table
+					id="productsTable"
+					inset="false"
+					items="{
+						path: 'jsonmodel>/DLSet/data/results',
+						sorter:[ {
+							path: 'ID_RIESGO'
+						},
+						{
+							path: 'TITULO'
+						}]
+					}"
+					class="sapFDynamicPageAlignContent"
+					width="auto">
+					<columns>
+						<Column width="15em">
+							<Text text="Identificador"/>
+						</Column>
+						<Column width="20em">
+							<Text text="Titulo"/>
+						</Column>
+						<Column width="20em">
+							<Text text="Responsable"/>
+						</Column>
+						<Column width="20em">
+							<Text text="Estado"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem  type="Navigation" press=".onListItemPress">
+							<cells class="sapFDynamicPageAlignContent">
+								<ObjectIdentifier title="{jsonmodel>ID_RIESGO}"/>
+								<ObjectIdentifier title="{jsonmodel>TITULO}"/>
+								<ObjectIdentifier title="{jsonmodel>RESPONSABLE}"/>
+								<ObjectIdentifier title="{jsonmodel>ESTADO}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</f:content>
+
+		<!-- DynamicPage Footer -->
+		<f:footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button type="Accept" text="Accept"/>
+				<Button type="Reject" text="Reject"/>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>
+
+

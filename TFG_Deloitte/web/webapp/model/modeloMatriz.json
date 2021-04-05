@@ -1,0 +1,79 @@
+{
+		"accounts": [
+		{
+			"Impacto": "1-2",
+			"Probabilidad": "0-30",
+			"Cantidad": "2"
+		},
+		{
+			"Impacto": "1-2",
+			"Probabilidad": "30-60",
+			"Cantidad": "1"
+		},
+		{
+			"Impacto": "1-2",
+			"Probabilidad": "60-100",
+			"Cantidad": "3"
+		},
+		{
+			"Impacto": "2-4",
+			"Probabilidad": "0-30",
+			"Cantidad": "5"
+		},
+		{
+			"Impacto": "2-4",
+			"Probabilidad": "30-60",
+			"Cantidad": "10"
+		},
+		{
+			"Impacto": "2-4",
+			"Probabilidad": "60-100",
+			"Cantidad": "1"
+		},
+		{
+			"Impacto": "4-6",
+			"Probabilidad": "0-30",
+			"Cantidad": "2"
+		},
+		{
+			"Impacto": "4-6",
+			"Probabilidad": "30-60",
+			"Cantidad": "4"
+		},
+		{
+			"Impacto": "4-6",
+			"Probabilidad": "60-100",
+			"Cantidad": "16"
+		},
+		{
+			"Impacto": "6-8",
+			"Probabilidad": "0-30",
+			"Cantidad": "2"
+		},
+		{
+			"Impacto": "6-8",
+			"Probabilidad": "30-60",
+			"Cantidad": "1"
+		},
+		{
+			"Impacto": "6-8",
+			"Probabilidad": "60-100",
+			"Cantidad": "1"
+		},
+		{
+			"Impacto": "8-10",
+			"Probabilidad": "0-30",
+			"Cantidad": "3"
+		},
+		{
+			"Impacto": "8-10",
+			"Probabilidad": "30-60",
+			"Cantidad": "1"
+		},
+		{
+			"Impacto": "8-10",
+			"Probabilidad": "60-100",
+			"Cantidad": "0"
+		}
+		]
+}

@@ -1,0 +1,30 @@
+service {
+	"RIESGO" as "ListaRiesgos";
+	"RIESGO" as "RiesgoConcreto";
+	"EVALUACION" as "RiesgoConcretoEvaluaciones";
+	"TIPOS_IMPACTO" as "RiesgoConcretoImpactos";
+	"TIPOS_RIESGO" as "RiesgoConcretoRiesgos";
+	"RIESGO" as "ModificarRiesgoDescripcion" update using "xsjs:riesgo.xsjslib::modificarRiesgoDescripcion";
+	"RIESGO" as "ModificarRiesgoAmbito" update using "xsjs:riesgo.xsjslib::modificarRiesgoAmbito";
+	"RIESGO" as "ModificarRiesgoCausas" update using "xsjs:riesgo.xsjslib::modificarRiesgoPosiblesCausas";
+	"RIESGO" as "ModificarRiesgoFuentes" update using "xsjs:riesgo.xsjslib::modificarRiesgoFuentes";
+	"RIESGO" as "ModificarRiesgoEstado" update using "xsjs:riesgo.xsjslib::modificarRiesgoEstado";
+	"RIESGO" as "EliminarRiesgo" update using "xsjs:riesgo.xsjslib::eliminarRiesgo";
+	"RIESGO" as "CrearRiesgo" create using "xsjs:riesgo.xsjslib::crearRiesgo";
+	
+	
+	
+	
+	"CUESTIONARIO" as "ListaCuestionarios";
+	"CUESTIONARIO" as "CuestionarioConcreto";
+	"CALCULOS" as "CuestionarioConcretoCalculos";
+	
+	"COMENTARIO" as "CuestionarioConcretoComentarios"
+	create using
+	"xsjs:riesgo.xsjslib::cuestionarioConcretoComentarios";
+	
+	"PREGUNTA" as "CuestionarioConcretoPreguntas"
+	create using
+	"xsjs:riesgo.xsjslib::cuestionarioConcretoCuestiones";
+	
+}

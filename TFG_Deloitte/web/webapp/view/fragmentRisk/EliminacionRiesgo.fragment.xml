@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   id="fragment-1">
+   <Dialog
+      title="Eliminación del Riesgo"
+      contentHeight="20%"
+      contentWidth="35%">
+		<content >
+			<Label class="sapUiResponsiveMargin" text="¿Esta seguro que desea eliminar este riesgo?"/>
+			<Text  class="sapUiResponsiveMargin" text="El riesgo permanecerá en el sistema, aunque no se podrá evaluar de nuevo"/>
+		</content>
+   		<beginButton>
+		<Button
+			text="Cancelar"
+			type="Emphasized"
+			press=".cancelarEliminacionRiesgo"/>
+		</beginButton>
+		<endButton>
+					<Button
+			text="Eliminar"
+			type="Reject"
+			press=".aceptarEliminacionRiesgo"/>
+		</endButton>
+   </Dialog>
+</core:FragmentDefinition>
